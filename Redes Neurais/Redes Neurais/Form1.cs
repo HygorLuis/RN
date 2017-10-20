@@ -19,6 +19,7 @@ namespace Redes_Neurais
         List<Treinamento> treinamento = new List<Treinamento>();
         List<Teste> teste = new List<Teste>();
         List<Avaliacao> avaliacao = new List<Avaliacao>();
+        List<Resultado> resultado = new List<Resultado>();
         int[] peso = { 5, 3, 6, 0, 2 };
 
         private void loadTipoEspecie()
@@ -69,12 +70,12 @@ namespace Redes_Neurais
             for (int i = 0; i < especie.Count; i++)
             {
                 if (verifica.AsEnumerable().ToList().Where(x => x.Equals(i)).ToList().Count == 0)
-                    teste.Add( new Teste { IDTipo = especie[i].IDTipo, Entradas = especie[i].Entradas});
+                    teste.Add(new Teste { IDTipo = especie[i].IDTipo, Entradas = especie[i].Entradas });
             }
         }
 
         private void avaliar(List<Avaliacao> verifica)
-        {       
+        {
             while (true)
             {
                 foreach (var entradas in verifica)
@@ -83,16 +84,22 @@ namespace Redes_Neurais
                     var x = entradas.Entradas.Split(',');
                     for (int i = 0; i < x.Length; i++)
                     {
-                        soma += (Convert.ToDouble(x[i].Replace(".",",")) * peso[i]);
+                        soma += (Convert.ToDouble(x[i].Replace(".", ",")) * peso[i]);
                     }
                     soma += peso[4];
 
-                    //var tt = tipoEspecie.Where(a => a.IDTipo.Equals(entradas.IDTipo)).GetEnumerator().Current.Especie;
+
+                    var tpt = tipoEspecie.Where(a => a.IDTipo.Equals(entradas.IDTipo));
 
                     if (Math.Round(soma, 0) <= 46)
                     {
-                        var tt = entradas.IDTipo;
-                        //MessageBox.Show($"Resultado: Iris-setosa \r\nVerdadeiro: {entradas.IDTipo}");
+                        //var especieVerdadeira = tipoEspecie.FirstOrDefault(a => a.IDTipo.Equals(entradas.IDTipo))?.Especie;
+                        resultado.Add(new Resultado
+                        {
+                            Entradas = entradas.Entradas,
+                            IDTipoResultado = 1,
+                            IDTipoVerdadeira = Convert.ToInt32(tipoEspecie.FirstOrDefault(a => a.IDTipo.Equals(entradas.IDTipo))?.Especie)
+                        });
                     }
                     else
                     {
@@ -110,11 +117,11 @@ namespace Redes_Neurais
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {         
+        {
             loadTipoEspecie();
             loadEspecie();
             separacao();
-            treinamento.ForEach(x => avaliacao.Add(new Avaliacao {IDTipo = x.IDTipo, Entradas = x.Entradas}));
+            treinamento.ForEach(x => avaliacao.Add(new Avaliacao { IDTipo = x.IDTipo, Entradas = x.Entradas }));
             avaliar(avaliacao);
 
 
