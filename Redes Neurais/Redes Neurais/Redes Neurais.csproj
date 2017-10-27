@@ -51,10 +51,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Teste.cs" />
-    <Compile Include="Model\Avaliacao.cs" />
     <Compile Include="Model\Resultado.cs" />
-    <Compile Include="Model\Treinamento.cs" />
+    <Compile Include="Model\PorcentagemAcerto.cs" />
     <Compile Include="Model\Especie.cs" />
     <Compile Include="Model\TipoEspecies.cs" />
     <Compile Include="Program.cs" />
