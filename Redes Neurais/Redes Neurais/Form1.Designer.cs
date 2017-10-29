@@ -35,10 +35,12 @@
             this.especies = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.especies1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblTotalTrein = new System.Windows.Forms.Label();
             this.lvTreinamento = new System.Windows.Forms.ListView();
             this.treina = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.treina1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lblTotalTeste = new System.Windows.Forms.Label();
             this.lvTeste = new System.Windows.Forms.ListView();
             this.avaliacao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.avaliacao1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -64,8 +66,6 @@
             this.rdIrisSetosa = new System.Windows.Forms.RadioButton();
             this.rdIrisVersicolor = new System.Windows.Forms.RadioButton();
             this.rdIrisVirginica = new System.Windows.Forms.RadioButton();
-            this.lblTotalTrein = new System.Windows.Forms.Label();
-            this.lblTotalTeste = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -145,6 +145,15 @@
             this.tabPage2.Text = "Treinamento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lblTotalTrein
+            // 
+            this.lblTotalTrein.AutoSize = true;
+            this.lblTotalTrein.Location = new System.Drawing.Point(27, 20);
+            this.lblTotalTrein.Name = "lblTotalTrein";
+            this.lblTotalTrein.Size = new System.Drawing.Size(52, 13);
+            this.lblTotalTrein.TabIndex = 2;
+            this.lblTotalTrein.Text = "Total de :";
+            // 
             // lvTreinamento
             // 
             this.lvTreinamento.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -177,6 +186,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Teste";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lblTotalTeste
+            // 
+            this.lblTotalTeste.AutoSize = true;
+            this.lblTotalTeste.Location = new System.Drawing.Point(27, 20);
+            this.lblTotalTeste.Name = "lblTotalTeste";
+            this.lblTotalTeste.Size = new System.Drawing.Size(52, 13);
+            this.lblTotalTeste.TabIndex = 2;
+            this.lblTotalTeste.Text = "Total de :";
             // 
             // lvTeste
             // 
@@ -423,24 +441,6 @@
             this.rdIrisVirginica.Text = "Iris Virginica";
             this.rdIrisVirginica.UseVisualStyleBackColor = true;
             this.rdIrisVirginica.CheckedChanged += new System.EventHandler(this.rdIrisVirginica_CheckedChanged);
-            // 
-            // lblTotalTrein
-            // 
-            this.lblTotalTrein.AutoSize = true;
-            this.lblTotalTrein.Location = new System.Drawing.Point(27, 20);
-            this.lblTotalTrein.Name = "lblTotalTrein";
-            this.lblTotalTrein.Size = new System.Drawing.Size(52, 13);
-            this.lblTotalTrein.TabIndex = 2;
-            this.lblTotalTrein.Text = "Total de :";
-            // 
-            // lblTotalTeste
-            // 
-            this.lblTotalTeste.AutoSize = true;
-            this.lblTotalTeste.Location = new System.Drawing.Point(21, 20);
-            this.lblTotalTeste.Name = "lblTotalTeste";
-            this.lblTotalTeste.Size = new System.Drawing.Size(52, 13);
-            this.lblTotalTeste.TabIndex = 2;
-            this.lblTotalTeste.Text = "Total de :";
             // 
             // Form1
             // 
