@@ -117,19 +117,20 @@ namespace Redes_Neurais
             int iCount;
             int dTotalIrisSetosa = 0;
             List<CriterioAvaliacao> avaliacao = new List<CriterioAvaliacao>();
-            List<Resultado> resultado = new List<Resultado>(); 
-
+            
             verifica.ForEach(x =>
             {
                 if (x.IDTipo == 1)
                     dTotalIrisSetosa++;
             });
 
-            for (iCount = 0; iCount < 250; iCount++)
+            for (iCount = 0; iCount < 150; iCount++)
             {
                 bool bCorrecaoPesos = false;
                 int acerto = 0;
-                foreach (var entradas in verifica)
+                List<Resultado> resultado = new List<Resultado>();
+
+                verifica.ForEach(entradas =>
                 {
                     double? soma = 0;
                     var x = entradas.Entradas.Split(',');
@@ -170,7 +171,7 @@ namespace Redes_Neurais
                             bCorrecaoPesos = true;
                         }
                     }
-                }
+                });
 
                 resultado.ForEach(x =>
                 {
@@ -220,7 +221,7 @@ namespace Redes_Neurais
                         lvResultTeste.Update();
                     }
                 });
-                resultado.Clear();
+                //resultado.Clear();
 
                 if (avaliacao.Count > 2 && bTreinamento)
                     if (avaliacao[avaliacao.Count - 1].AcertoPorcent.Equals(avaliacao[avaliacao.Count - 2].AcertoPorcent)
@@ -258,17 +259,17 @@ namespace Redes_Neurais
                             && porcentagemAcerto[porcentagemAcerto.Count - 1].ErroPorcent <= porcentagemAcerto[porcentagemAcerto.Count - 2].ErroPorcent
                             && */!bCorrecaoPesos)
                         {
-                            peso[0] = avaliacao[avaliacao.Count - 2].Peso1;
-                            peso[1] = avaliacao[avaliacao.Count - 2].Peso2;
-                            peso[2] = avaliacao[avaliacao.Count - 2].Peso3;
-                            peso[3] = avaliacao[avaliacao.Count - 2].Peso4;
-                            peso[4] = avaliacao[avaliacao.Count - 2].Baias;
+                            peso[0] = avaliacao[avaliacao.Count - 1].Peso1;
+                            peso[1] = avaliacao[avaliacao.Count - 1].Peso2;
+                            peso[2] = avaliacao[avaliacao.Count - 1].Peso3;
+                            peso[3] = avaliacao[avaliacao.Count - 1].Peso4;
+                            peso[4] = avaliacao[avaliacao.Count - 1].Baias;
 
                             var tipo = rdIrisSetosa.Checked ? rdIrisSetosa.Text : rdIrisVersicolor.Checked ? rdIrisVersicolor.Text : rdIrisVirginica.Text;
-                            lblAcertoTrein.Text = $"Porcentagem de acerto: {avaliacao[avaliacao.Count - 2].AcertoPorcent}%";
-                            lblQtdAcertoTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 2].QtdAcerto}";
-                            lblErroTrein.Text = $"Porcentagem de erro: {avaliacao[avaliacao.Count - 2].ErroPorcent}%";
-                            lblQtdErroTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 2].QtdErro}";
+                            lblAcertoTrein.Text = $"Porcentagem de acerto: {avaliacao[avaliacao.Count - 1].AcertoPorcent}%";
+                            lblQtdAcertoTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 1].QtdAcerto}";
+                            lblErroTrein.Text = $"Porcentagem de erro: {avaliacao[avaliacao.Count - 1].ErroPorcent}%";
+                            lblQtdErroTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 1].QtdErro}";
                             lblTotalTrein.Text = $"Total de {tipo}: {dTotalIrisSetosa}";
                             break;
                         }
@@ -377,13 +378,13 @@ namespace Redes_Neurais
                 //resultado.Clear();
             }
 
-            if (iCount == 250)
+            if (iCount == 150)
             {
                 var tipo = rdIrisSetosa.Checked ? rdIrisSetosa.Text : rdIrisVersicolor.Checked ? rdIrisVersicolor.Text : rdIrisVirginica.Text;
-                lblAcertoTrein.Text = $"Porcentagem de acerto: {avaliacao[avaliacao.Count - 2].AcertoPorcent}%";
-                lblQtdAcertoTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 2].QtdAcerto}";
-                lblErroTrein.Text = $"Porcentagem de erro: {avaliacao[avaliacao.Count - 2].ErroPorcent}%";
-                lblQtdErroTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 2].QtdErro}";
+                lblAcertoTrein.Text = $"Porcentagem de acerto: {avaliacao[avaliacao.Count - 1].AcertoPorcent}%";
+                lblQtdAcertoTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 1].QtdAcerto}";
+                lblErroTrein.Text = $"Porcentagem de erro: {avaliacao[avaliacao.Count - 1].ErroPorcent}%";
+                lblQtdErroTrein.Text = $"Quantidade: {avaliacao[avaliacao.Count - 1].QtdErro}";
                 lblTotalTrein.Text = $"Total de {tipo}: {dTotalIrisSetosa}";
 
                 MessageBox.Show(
@@ -434,7 +435,6 @@ namespace Redes_Neurais
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //treinamento.ForEach(x => avaliacao.Add(new Especie { IDTipo = x.IDTipo, Entradas = x.Entradas }));
             if (VerificaSelecao())
             {
                 Cursor = Cursors.WaitCursor;

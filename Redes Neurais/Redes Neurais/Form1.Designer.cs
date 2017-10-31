@@ -223,7 +223,7 @@
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabControl2.Location = new System.Drawing.Point(557, 59);
+            this.tabControl2.Location = new System.Drawing.Point(559, 59);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(308, 354);
@@ -250,7 +250,7 @@
             this.lblQtdErroTrein.AutoSize = true;
             this.lblQtdErroTrein.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblQtdErroTrein.ForeColor = System.Drawing.Color.Red;
-            this.lblQtdErroTrein.Location = new System.Drawing.Point(170, 30);
+            this.lblQtdErroTrein.Location = new System.Drawing.Point(160, 30);
             this.lblQtdErroTrein.Name = "lblQtdErroTrein";
             this.lblQtdErroTrein.Size = new System.Drawing.Size(68, 13);
             this.lblQtdErroTrein.TabIndex = 11;
@@ -261,7 +261,7 @@
             this.lblErroTrein.AutoSize = true;
             this.lblErroTrein.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblErroTrein.ForeColor = System.Drawing.Color.Red;
-            this.lblErroTrein.Location = new System.Drawing.Point(170, 7);
+            this.lblErroTrein.Location = new System.Drawing.Point(160, 7);
             this.lblErroTrein.Name = "lblErroTrein";
             this.lblErroTrein.Size = new System.Drawing.Size(112, 13);
             this.lblErroTrein.TabIndex = 10;
@@ -338,7 +338,7 @@
             this.lblQtdErroTeste.AutoSize = true;
             this.lblQtdErroTeste.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblQtdErroTeste.ForeColor = System.Drawing.Color.Red;
-            this.lblQtdErroTeste.Location = new System.Drawing.Point(170, 30);
+            this.lblQtdErroTeste.Location = new System.Drawing.Point(160, 30);
             this.lblQtdErroTeste.Name = "lblQtdErroTeste";
             this.lblQtdErroTeste.Size = new System.Drawing.Size(68, 13);
             this.lblQtdErroTeste.TabIndex = 9;
@@ -349,7 +349,7 @@
             this.lblErroTeste.AutoSize = true;
             this.lblErroTeste.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblErroTeste.ForeColor = System.Drawing.Color.Red;
-            this.lblErroTeste.Location = new System.Drawing.Point(170, 7);
+            this.lblErroTeste.Location = new System.Drawing.Point(160, 7);
             this.lblErroTeste.Name = "lblErroTeste";
             this.lblErroTeste.Size = new System.Drawing.Size(112, 13);
             this.lblErroTeste.TabIndex = 8;
@@ -454,7 +454,8 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnAprender);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Redes Neurais";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
