@@ -66,6 +66,13 @@
             this.rdIrisSetosa = new System.Windows.Forms.RadioButton();
             this.rdIrisVersicolor = new System.Windows.Forms.RadioButton();
             this.rdIrisVirginica = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblSoma = new System.Windows.Forms.Label();
+            this.lblBias = new System.Windows.Forms.Label();
+            this.lblPeso4 = new System.Windows.Forms.Label();
+            this.lblPeso3 = new System.Windows.Forms.Label();
+            this.lblPeso2 = new System.Windows.Forms.Label();
+            this.lblPeso1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,12 +80,13 @@
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAprender
             // 
             this.btnAprender.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAprender.Location = new System.Drawing.Point(352, 192);
+            this.btnAprender.Location = new System.Drawing.Point(352, 151);
             this.btnAprender.Name = "btnAprender";
             this.btnAprender.Size = new System.Drawing.Size(87, 23);
             this.btnAprender.TabIndex = 0;
@@ -92,7 +100,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabControl1.Location = new System.Drawing.Point(31, 59);
+            this.tabControl1.Location = new System.Drawing.Point(31, 18);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(205, 354);
@@ -223,7 +231,7 @@
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tabControl2.Location = new System.Drawing.Point(559, 59);
+            this.tabControl2.Location = new System.Drawing.Point(559, 18);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(308, 354);
@@ -410,7 +418,7 @@
             // 
             this.rdIrisSetosa.AutoSize = true;
             this.rdIrisSetosa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdIrisSetosa.Location = new System.Drawing.Point(272, 149);
+            this.rdIrisSetosa.Location = new System.Drawing.Point(272, 108);
             this.rdIrisSetosa.Name = "rdIrisSetosa";
             this.rdIrisSetosa.Size = new System.Drawing.Size(74, 17);
             this.rdIrisSetosa.TabIndex = 10;
@@ -422,7 +430,8 @@
             // 
             this.rdIrisVersicolor.AutoSize = true;
             this.rdIrisVersicolor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdIrisVersicolor.Location = new System.Drawing.Point(352, 149);
+            this.rdIrisVersicolor.Enabled = false;
+            this.rdIrisVersicolor.Location = new System.Drawing.Point(352, 108);
             this.rdIrisVersicolor.Name = "rdIrisVersicolor";
             this.rdIrisVersicolor.Size = new System.Drawing.Size(87, 17);
             this.rdIrisVersicolor.TabIndex = 11;
@@ -434,7 +443,8 @@
             // 
             this.rdIrisVirginica.AutoSize = true;
             this.rdIrisVirginica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdIrisVirginica.Location = new System.Drawing.Point(445, 149);
+            this.rdIrisVirginica.Enabled = false;
+            this.rdIrisVirginica.Location = new System.Drawing.Point(445, 108);
             this.rdIrisVirginica.Name = "rdIrisVirginica";
             this.rdIrisVirginica.Size = new System.Drawing.Size(81, 17);
             this.rdIrisVirginica.TabIndex = 12;
@@ -442,11 +452,81 @@
             this.rdIrisVirginica.UseVisualStyleBackColor = true;
             this.rdIrisVirginica.CheckedChanged += new System.EventHandler(this.rdIrisVirginica_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblSoma);
+            this.groupBox1.Controls.Add(this.lblBias);
+            this.groupBox1.Controls.Add(this.lblPeso4);
+            this.groupBox1.Controls.Add(this.lblPeso3);
+            this.groupBox1.Controls.Add(this.lblPeso2);
+            this.groupBox1.Controls.Add(this.lblPeso1);
+            this.groupBox1.Location = new System.Drawing.Point(295, 201);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 136);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Valores";
+            // 
+            // lblSoma
+            // 
+            this.lblSoma.AutoSize = true;
+            this.lblSoma.Location = new System.Drawing.Point(120, 101);
+            this.lblSoma.Name = "lblSoma";
+            this.lblSoma.Size = new System.Drawing.Size(37, 13);
+            this.lblSoma.TabIndex = 5;
+            this.lblSoma.Text = "Soma:";
+            // 
+            // lblBias
+            // 
+            this.lblBias.AutoSize = true;
+            this.lblBias.Location = new System.Drawing.Point(34, 101);
+            this.lblBias.Name = "lblBias";
+            this.lblBias.Size = new System.Drawing.Size(30, 13);
+            this.lblBias.TabIndex = 4;
+            this.lblBias.Text = "Bias:";
+            // 
+            // lblPeso4
+            // 
+            this.lblPeso4.AutoSize = true;
+            this.lblPeso4.Location = new System.Drawing.Point(120, 63);
+            this.lblPeso4.Name = "lblPeso4";
+            this.lblPeso4.Size = new System.Drawing.Size(43, 13);
+            this.lblPeso4.TabIndex = 3;
+            this.lblPeso4.Text = "Peso 4:";
+            // 
+            // lblPeso3
+            // 
+            this.lblPeso3.AutoSize = true;
+            this.lblPeso3.Location = new System.Drawing.Point(34, 63);
+            this.lblPeso3.Name = "lblPeso3";
+            this.lblPeso3.Size = new System.Drawing.Size(46, 13);
+            this.lblPeso3.TabIndex = 2;
+            this.lblPeso3.Text = "Peso 3: ";
+            // 
+            // lblPeso2
+            // 
+            this.lblPeso2.AutoSize = true;
+            this.lblPeso2.Location = new System.Drawing.Point(120, 25);
+            this.lblPeso2.Name = "lblPeso2";
+            this.lblPeso2.Size = new System.Drawing.Size(46, 13);
+            this.lblPeso2.TabIndex = 1;
+            this.lblPeso2.Text = "Peso 2: ";
+            // 
+            // lblPeso1
+            // 
+            this.lblPeso1.AutoSize = true;
+            this.lblPeso1.Location = new System.Drawing.Point(34, 25);
+            this.lblPeso1.Name = "lblPeso1";
+            this.lblPeso1.Size = new System.Drawing.Size(46, 13);
+            this.lblPeso1.TabIndex = 0;
+            this.lblPeso1.Text = "Peso 1: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 439);
+            this.ClientSize = new System.Drawing.Size(897, 397);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rdIrisVirginica);
             this.Controls.Add(this.rdIrisVersicolor);
             this.Controls.Add(this.rdIrisSetosa);
@@ -468,6 +548,8 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,6 +595,13 @@
         private System.Windows.Forms.RadioButton rdIrisVirginica;
         private System.Windows.Forms.Label lblTotalTrein;
         private System.Windows.Forms.Label lblTotalTeste;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblBias;
+        private System.Windows.Forms.Label lblPeso4;
+        private System.Windows.Forms.Label lblPeso3;
+        private System.Windows.Forms.Label lblPeso2;
+        private System.Windows.Forms.Label lblPeso1;
+        private System.Windows.Forms.Label lblSoma;
     }
 }
 

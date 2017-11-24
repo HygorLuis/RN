@@ -10,7 +10,7 @@
         public int? Peso2 { get; set; }
         public int? Peso3 { get; set; }
         public int? Peso4 { get; set; }
-        public int? Baias { get; set; }
+        public int? Bias { get; set; }
         public double? Soma { get; set; }
     }
 }
